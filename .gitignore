@@ -17,6 +17,7 @@ build
 .nitro
 .cache
 out
+storybook-static
 target
 
 # TypeScript
