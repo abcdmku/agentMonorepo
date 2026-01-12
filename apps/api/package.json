@@ -2,6 +2,7 @@
     "name": "@repo/api",
     "private": true,
     "scripts": {
+        "preinstall": "node ../../tools/scripts/guard-install.js",
         "dev": "nitro dev",
         "build": "nitro build",
         "preview": "node .output/server/index.mjs"

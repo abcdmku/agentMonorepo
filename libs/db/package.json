@@ -4,6 +4,7 @@
     "main": "./index.ts",
     "types": "./index.ts",
     "scripts": {
+        "preinstall": "node ../../tools/scripts/guard-install.js",
         "generate": "drizzle-kit generate:pg"
     },
     "dependencies": {

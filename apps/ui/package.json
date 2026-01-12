@@ -3,6 +3,7 @@
     "private": true,
     "type": "module",
     "scripts": {
+        "preinstall": "node ../../tools/scripts/guard-install.js",
         "dev": "vite",
         "build": "tsc && vite build",
         "preview": "vite preview"

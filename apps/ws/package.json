@@ -3,6 +3,7 @@
     "private": true,
     "main": "./index.ts",
     "scripts": {
+        "preinstall": "node ../../tools/scripts/guard-install.js",
         "dev": "tsx watch index.ts",
         "build": "tsc"
     },
