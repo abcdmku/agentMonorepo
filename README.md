@@ -28,6 +28,8 @@ graph TD
 
     %% Dependencies
     UI --> API
+    UI --> WS
+    UI --> UILib
     API --> Services
     API --> Auth
     WS --> Services
@@ -36,6 +38,7 @@ graph TD
     Services --> Schemas
     Services --> DB
     Services --> Auth
+    Services --> Contracts
     
     Schemas --> DB
     
