@@ -1,0 +1,17 @@
+{
+    "name": "@repo/db",
+    "private": true,
+    "main": "./index.ts",
+    "types": "./index.ts",
+    "scripts": {
+        "generate": "drizzle-kit generate:pg"
+    },
+    "dependencies": {
+        "drizzle-orm": "^0.29.3",
+        "postgres": "^3.4.3"
+    },
+    "devDependencies": {
+        "drizzle-kit": "^0.20.13",
+        "tsx": "^4.7.1"
+    }
+}

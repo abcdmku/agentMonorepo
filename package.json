@@ -1,0 +1,13 @@
+{
+    "name": "agent-monorepo",
+    "version": "0.0.0",
+    "private": true,
+    "workspaces": [
+        "apps/*",
+        "libs/*"
+    ],
+    "engines": {
+        "node": ">=22"
+    },
+    "packageManager": "npm@10.0.0"
+}

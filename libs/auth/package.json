@@ -1,0 +1,6 @@
+{
+    "name": "@repo/auth",
+    "private": true,
+    "main": "./index.ts",
+    "types": "./index.ts"
+}

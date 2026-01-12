@@ -1,0 +1,12 @@
+{
+    "name": "@repo/services",
+    "private": true,
+    "main": "./index.ts",
+    "types": "./index.ts",
+    "dependencies": {
+        "@repo/schemas": "*",
+        "@repo/db": "*",
+        "@repo/auth": "*",
+        "zod": "^3.22.4"
+    }
+}
