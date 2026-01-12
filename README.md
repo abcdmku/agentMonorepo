@@ -10,20 +10,20 @@ The following diagram illustrates the dependency relationship between the variou
 graph LR
     %% Apps
     subgraph Apps
-        API["apps/api <br/> (Nitro Server)"]
         UI["apps/ui <br/> (Vite + React)"]
+        API["apps/api <br/> (Nitro Server)"]
         WS["apps/ws <br/> (WebSocket Server)"]
     end
 
     %% Libs
     subgraph Libs
-        Auth["libs/auth <br/> (Authentication)"]
-        DB["libs/db <br/> (Drizzle ORM)"]
-        Schemas["libs/schemas <br/> (Zod & Drizzle Schemas)"]
-        Services["libs/services <br/> (Business Logic)"]
-        Shared["libs/shared <br/> (Utilities)"]
         UILib["libs/ui <br/> (Component Library / Storybook)"]
+        Services["libs/services <br/> (Business Logic)"]
+        Auth["libs/auth <br/> (Authentication)"]
         Contracts["libs/api-contracts <br/> (API Types)"]
+        Schemas["libs/schemas <br/> (Zod & Drizzle Schemas)"]
+        DB["libs/db <br/> (Drizzle ORM)"]
+        Shared["libs/shared <br/> (Utilities)"]
     end
 
     %% Dependencies
