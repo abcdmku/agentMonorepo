@@ -7,7 +7,7 @@ This repository is a monorepo structured using **Turborepo** (implied by structu
 The following diagram illustrates the dependency relationship between the various components in this repository.
 
 ```mermaid
-graph TD
+graph LR
     %% Apps
     subgraph Apps
         API["apps/api <br/> (Nitro Server)"]
