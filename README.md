@@ -15,6 +15,9 @@ graph LR
         WS["apps/ws <br/> (WebSocket Server)"]
     end
 
+    Partners["Partners <br/> (External Consumers)"] --> API
+    Partners --> WS
+
     %% Libs
     subgraph Libs
         UILib["libs/ui <br/> (Component Library / Storybook)"]
