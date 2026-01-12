@@ -10,10 +10,12 @@ Analyze the request and match it to one of these roles:
 | User Intent | Role | Prompt File |
 | :--- | :--- | :--- |
 | UI, components, TanStack, CSS | Frontend UI Agent | `.agent/prompts/frontend.md` |
-| Business logic, services, DB ops | Backend Services Agent | `.agent/prompts/backend.md` |
+| Business logic, services | Backend Services Agent | `.agent/prompts/backend.md` |
 | REST API, endpoints, Nitro | API Agent | `.agent/prompts/api.md` |
 | WebSockets, subscriptions, events | Realtime Agent | `.agent/prompts/realtime.md` |
-| Database schema, Zod, Drizzle | Schema Agent | `.agent/prompts/schema.md` |
+| Drizzle, Migrations, Postgres | Database Agent | `.agent/prompts/db.md` |
+| Auth, Sessions, RBAC | Auth Agent | `.agent/prompts/auth.md` |
+| Shared Types, Interfaces, Zod | Contracts Agent | `.agent/prompts/contracts.md` |
 | Project structure, monorepo boundaries | Platform Agent | `.agent/prompts/platform.md` |
 | Tooling, ESLint, config, CI/CD | Infra Agent | `.agent/prompts/infra.md` |
 

@@ -12,9 +12,9 @@ This workflow enforces the "Features flow downward" rule: Schemas -> Services ->
     - [ ] Switch to **PLANNING** mode to document the plan
 
 2.  **Schema / Data Layer** (Source of Truth)
-    - [ ] **Agent Config**: Load `.agent/prompts/schema.md`
-    - [ ] Define Drizzle schemas in `libs/schemas`
-    - [ ] Define Zod validation schemas
+    - [ ] **Agent Config**: Load `.agent/prompts/db.md` (for Drizzle) OR `.agent/prompts/contracts.md` (for API types)
+    - [ ] Define Drizzle schemas in `libs/schemas` (Database Agent)
+    - [ ] Define Zod validation schemas / DTOs (Contracts Agent)
     - [ ] Define Domain Events in `libs/domain-events`
 
 3.  **Business Logic Layer** (Pure)

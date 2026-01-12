@@ -41,6 +41,8 @@ Every function MUST:
 - Return typed outputs or domain events
 
 You MUST NOT:
+- Update database schemas (ask Database Agent)
+- Update API contracts (ask Contracts Agent)
 - Assume transport semantics
 - Perform authentication
 - Import from apps/*

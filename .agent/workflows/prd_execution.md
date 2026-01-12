@@ -24,10 +24,14 @@ The agent must break the PRD down into discrete, layer-specific tasks.
     > "Here is the PRD. Using the rules in `guided_flow.md` and `router.md`, break this down into a step-by-step implementation plan. For each step, specify which Agent Role (and prompt file) is required."
 
 *   **Expected Agent Output:**
-    1.  **Schema Phase** (Role: Schema Agent, Prompt: `.agent/prompts/schema.md`)
-        *   Task: Create `User` table in Drizzle.
-    2.  **Service Phase** (Role: Backend Agent, Prompt: `.agent/prompts/backend.md`)
-        *   Task: Implement `createUser` service with Zod validation.
+    1.  **Schema Phase** (Role: Database Agent & Contracts Agent)
+        *   **Prompt**: `.agent/prompts/db.md` and `.agent/prompts/contracts.md`
+        *   **Goal**: Define the data structures in `libs/schemas` (Zod/Drizzle) and `libs/api-contracts`.
+        *   **Output**: Drizzle tables, Zod schemas, Enum definitions.
+    2.  **Backend Phase** (Role: Backend Services Agent)
+        *   **Prompt**: `.agent/prompts/backend.md`
+        *   **Goal**: Implement business logic in `libs/services`.
+        *   **Output**: Service functions, event emitters.
     3.  **API Phase** (Role: API Agent, Prompt: `.agent/prompts/api.md`)
         *   Task: Add `POST /users` endpoint.
     4.  **UI Phase** (Role: Frontend Agent, Prompt: `.agent/prompts/frontend.md`)
@@ -40,7 +44,7 @@ Execute the steps **sequentially**.
 **Crucial Rule:**
 Before starting each step, the agent **MUST** explicitly load the prompt for that specific role.
 
-*   *Step 1 starts...* agent reads `.agent/prompts/schema.md`... writes code...
+*   *Step 1 starts...* agent reads `.agent/prompts/db.md`... writes code...
 *   *Step 2 starts...* agent reads `.agent/prompts/backend.md`... writes code...
 
 ## 4. Verification
