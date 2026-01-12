@@ -8,11 +8,11 @@
         "generate": "drizzle-kit generate:pg"
     },
     "dependencies": {
-        "drizzle-orm": "1.0.0-beta.8-4ae55b5",
+        "drizzle-orm": "1.0.0-beta.10-4a43a22",
         "postgres": "^3.4.3"
     },
     "devDependencies": {
-        "drizzle-kit": "1.0.0-beta.8-4ae55b5",
+        "drizzle-kit": "1.0.0-beta.10-4a43a22",
         "tsx": "^4.7.1"
     }
 }
