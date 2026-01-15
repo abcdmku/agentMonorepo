@@ -7,9 +7,6 @@
         "preinstall": "node ../../tools/scripts/guard-install.js"
     },
     "dependencies": {
-        "@repo/schemas": "*",
-        "@repo/db": "*",
-        "@repo/auth": "*",
         "zod": "^3.22.4"
     }
 }

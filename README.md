@@ -22,10 +22,7 @@ graph LR
     subgraph Libs
         UILib["libs/ui <br/> (Component Library / Storybook)"]
         Services["libs/services <br/> (Business Logic)"]
-        Auth["libs/auth <br/> (Authentication)"]
         Contracts["libs/api-contracts <br/> (API Types)"]
-        Schemas["libs/schemas <br/> (Zod & Drizzle Schemas)"]
-        DB["libs/db <br/> (Drizzle ORM)"]
         Shared["libs/shared <br/> (Utilities)"]
     end
 
@@ -34,16 +31,9 @@ graph LR
     UI --> WS
     UI --> UILib
     API --> Services
-    API --> Auth
     WS --> Services
-    WS --> Auth
     
-    Services --> Schemas
-    Services --> DB
-    Services --> Auth
     Services --> Contracts
-    
-    Schemas --> DB
     
     %% Note: Indirect deps or shared utils might be used widely
 ```
@@ -62,10 +52,7 @@ graph LR
 
 | Lib | Path | Description |
 | :--- | :--- | :--- |
-| **@repo/services** | `libs/services` | Contains core business logic and service layer, orchestrating DB and Auth. |
-| **@repo/auth** | `libs/auth` | Authentication logic and utilities. |
-| **@repo/db** | `libs/db` | Database connection, configuration, and migrations using **Drizzle ORM** (Postgres). |
-| **@repo/schemas** | `libs/schemas` | Data definitions using **Zod** and Drizzle schemas. |
+| **@repo/services** | `libs/services` | Contains core business logic and service layer used by the API. |
 | **@repo/ui-lib** | `libs/ui` | Shared React component library, developed and tested with **Storybook**. |
 | **@repo/api-contracts**| `libs/api-contracts` | TypeScript definitions and Zod schemas used to define the API surface area. |
 | **@repo/shared** | `libs/shared` | General purpose utilities used across the repository. |
@@ -75,3 +62,12 @@ graph LR
 1.  **Install Dependencies**: `npm install`
 2.  **Run Development**: Use the root scripts (managed by Turbo or similar) to start dev servers.
     *   `npm run dev` (typical)
+
+## Sync vs Async Logic
+
+Business logic lives in `@repo/services`, organized by domain:
+
+- `libs/services/src/domains/<domain>/sync/*`: synchronous use-cases called by HTTP/WebSocket entrypoints
+- `libs/services/src/domains/<domain>/async/*`: async consumers/handlers for Kafka/SQS/SNS-style message processing
+
+Async handlers are wired through `libs/services/src/domains/index.ts` (`allConsumers`) and can be executed by a transport adapter implementing `AsyncTransport` (`libs/services/src/async/types.ts`). A runnable in-memory example is in `tools/async-worker.ts`.

@@ -9,9 +9,7 @@
     },
     "dependencies": {
         "nitropack": "^2.13.0",
-        "better-auth": "^1.4.11",
         "zod": "^4.3.5",
-        "@repo/services": "*",
-        "@repo/auth": "*"
+        "@repo/services": "*"
     }
 }

@@ -9,10 +9,8 @@
     },
     "dependencies": {
         "ws": "^8.16.0",
-        "better-auth": "^1.4.11",
         "zod": "^4.3.5",
-        "@repo/services": "*",
-        "@repo/auth": "*"
+        "@repo/services": "*"
     },
     "devDependencies": {
         "tsx": "^4.7.1",

@@ -1,2 +1,2 @@
 // Export your API contracts/types here
-// Example: export * from './auth';
+// Example: export * from './users';
